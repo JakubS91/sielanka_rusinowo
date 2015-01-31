@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<log>
+		<type>file</type>
+		<name>./propel.log</name>
+		<ident>sielanka_rusinowo</ident>
+		<level>7</level>
+	</log>
+	<propel>
+		<datasources default="sielanka_rusinowo">
+			<datasource id="sielanka_rusinowo">
+				<adapter>mysql</adapter>
+				<connection>
+					<dsn>mysql:host=localhost;dbname=domki</dsn>
+					<user>root</user>
+					<password>admin</password>
+				</connection>
+			</datasource>
+		</datasources>
+	</propel>
+</config>

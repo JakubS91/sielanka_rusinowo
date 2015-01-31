@@ -1,0 +1,39 @@
+<?php echo $this->doctype(); ?>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8">
+    <?php echo $this->headTitle('Sielanka Rusinowo')->setSeparator(' - ')->setAutoEscape(false); ?>
+    <?php echo $this->headMeta()
+      ->appendName('viewport', 'width=device-width, initial-scale=1.0')
+      ->appendHttpEquiv('X-UA-Compatible', 'IE=edge');
+    ?>
+    <!-- Le styles -->
+    <?php
+      echo $this->headLink(array('rel' => 'shortcut icon', 'type' => 'image/vnd.microsoft.icon', 'href' => $this->basePath() . '/img/favicon.ico'))
+        ->prependStylesheet($this->basePath() . '/css/style.css');
+    ?>
+  </head>
+  <body>
+    <div id="content"></div>
+
+    <?php
+      require('public/js/templates/index.php');
+    ?>
+
+    <?php
+      echo $this->inlineScript()
+        ->appendFile($this->basePath('js/libs/jquery-1.11.0.min.js'))
+        ->appendFile($this->basePath('js/libs/jquery-migrate-1.2.1.min.js'))
+        ->appendFile($this->basePath('js/libs/underscore-min.js'))
+        ->appendFile($this->basePath('js/libs/backbone-min.js'))
+        ->appendFile($this->basePath('js/app.be.client.js'))
+        ->appendFile($this->basePath('js/app.config.js'))
+        ->appendFile($this->basePath('js/app.js'))
+        ->appendFile($this->basePath('js/views/index.js'));
+    ?>
+    <script type="text/javascript">
+      var router = new APP.Routers.MainRouter();
+    </script>
+  </body>
+</html>
